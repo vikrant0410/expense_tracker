@@ -1,16 +1,25 @@
-.userData{
-    left: -350px;
-    z-index: 9;
-    color: #fff;
-    background: #2c3e58;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: left;
-    line-height: 1.2;
-    border: 0;
+.expense-date {
+    display: flex;
+    flex-direction: column;
+    width:5.5rem;
+    height:5.5rem;
+    border: 1px solid #fff ;
+    background-color: #645CAA;
+    color:#fff;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
 }
-.ExData{
-    width: 100%;
-    padding: 12px 12px;
-    margin-bottom: 8px;
+
+.expense-date__month{
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.expense-date__day{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.expense-date__year{
+    font-size: 0.75rem;
 }

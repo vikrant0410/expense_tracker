@@ -1,9 +1,10 @@
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./ExpenseDate.css"
 
 
 const ExpenseDate = (props) => {
-  const aboutDate = new Date(props.finalDate);
+  const aboutDate = new Date(props.date);
   const year = aboutDate.getFullYear();
   const month = aboutDate.toLocaleString("en-IN", { month: "short" });
   const day = aboutDate.toLocaleString("en-IN", { day: "2-digit" });
@@ -13,10 +14,10 @@ const ExpenseDate = (props) => {
   // var day = ;
   return (
     <div>
-      <Col className="expense_main__date">
-        <div className="expense_date__month">{year}</div>
-        <div className="expense_date__date">{day}</div>
-        <div className="expense_date__year">{month}</div>
+      <Col className="expense-date">
+        <div className="expense-date__year">{month}</div>
+        <div className="expense-date__month">{year}</div>
+        <div className="expense-date__day">{day}</div>
       </Col>
     </div>
   );

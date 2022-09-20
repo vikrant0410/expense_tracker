@@ -1,48 +1,35 @@
-import ExpenseRow from './components/ExpenseRow';
+
 import data from "./expenseData.js"
-import AddExpense from "./components/AddExpense";
+import Expenses from "./components/Expenses"
 import './App.css';
 import { useState } from "react";
+import NewExpense from "./components/NewExpense/NewExpense.js";
+import Card from "./components/Card"
+import ExpensesFilter from "./components/ExpensesFilter/ExpensesFilter.js";
 
 
 
 
 
 function App() {
-//   const [ex1, ex2, ex3] = data
 
-//   var newData = []
+  const [expData, setExpenseData] = useState(data);
 
-//   const handleData = (expData)=>{
-//  newData.push(expData)
-
-//   }
-const [expData, setExpenseData] = useState(data);
-
-const handleData = (expData) => {
-  setExpenseData((prevValue) => {
-    return [...prevValue, expData];
-  });
-};
-
-
+  const handleData = (newData) => {
+    setExpenseData((prevValue) => {
+      return [...prevValue, newData];
+    });
+  };
 
   return (
     <div className="App">
 
-<AddExpense pullFunc={handleData} />
+      <Card>
+        <NewExpense pullFunc={handleData} />
+        <Expenses expenses={expData} />
+      </Card>
 
-{expData.map((expense, index) => {
-  return (
-    <ExpenseRow
-      key={index}
-      name={expense.expenseName}
-      date={expense.date}
-      amount={expense.expenseAmount}
-    />
-  );
-})}
-    
+
     </div>
   );
 }
